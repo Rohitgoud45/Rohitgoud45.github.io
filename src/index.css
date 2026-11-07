@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ivory: #F0EDE5;
+  --color-ink: #25241F;
+  --color-taupe: #B4A58E;
+  --color-stone: #DAD8D1;
+  --font-serif: "Instrument Serif", "Times New Roman", serif;
+  --font-sans: "Times New Roman", Times, serif;
+}
+
+html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+body {
+  background: var(--color-ivory);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+::selection { background: var(--color-ink); color: var(--color-ivory); }
+:focus-visible { outline: 2px solid var(--color-ink); outline-offset: 3px; }
+
+.eyebrow {
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.link-line {
+  background: linear-gradient(currentColor, currentColor) 0 100% / 0 1px no-repeat;
+  transition: background-size .4s ease;
+}
+.link-line:hover, .link-line:focus-visible { background-size: 100% 1px; }
+
+/* placeholder text Rohit still has to fill in — visible on purpose */
+.todo { border: 1px dashed var(--color-taupe); padding: 0 .35em; color: #7d705c; font-style: italic; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
